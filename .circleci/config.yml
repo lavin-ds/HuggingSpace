@@ -14,7 +14,7 @@ workflows:
 executors:
   default:
     docker:
-      - image: &baseimage alpine3.16
+      - image: &baseimage alpine
 
 jobs:
   sync-to-huggingface:

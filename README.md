@@ -1,2 +1,8 @@
-# HuggingSpace
-Test repo to keep spaces in sync
+---
+title: {{title}}
+emoji: {{emoji}}
+colorFrom: {{colorFrom}}
+colorTo: {{colorTo}}
+sdk_version: {{sdkVersion}}
+pinned: false
+---

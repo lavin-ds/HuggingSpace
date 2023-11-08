@@ -29,7 +29,7 @@ jobs:
       - run:
           name: push to Huggingface hub
           command: |
-                  cd main 
+                  cd / 
                   git config user.email "lavin.github@outlook.com" 
                   git config user.name "CCI Bot" 
                   git add -A 

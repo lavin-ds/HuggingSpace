@@ -1,0 +1,37 @@
+version: 2.1
+
+workflows:
+  main:
+    jobs:
+      - sync-to-huggingface:
+          context:
+            - my-context
+          filters:
+            branches:
+              only:
+                - main
+
+executors:
+  default:
+    docker:
+      - image: &baseimage alpine3.16
+
+jobs:
+  sync-to-huggingface:
+    docker:
+     - image: *baseimage
+    resource_class: small
+    steps:
+      - run: 
+          name: install git
+          command: apk update && apk add openssh-client git
+      - checkout
+      - run:
+          name: push to Huggingface hub
+          command: |
+                  cd main 
+                  git config user.email "lavin.github@outlook.com" 
+                  git config user.name "CCI Bot" 
+                  git add -A 
+                  git commit -m "Automated deployment job ${CIRCLE_BRANCH} [skip ci]" --allow-empty 
+                  git push https://lavin-ds:${HF_PERSONAL_TOKEN}@huggingface.co/spaces/lavin-ds/HuggingSpace main

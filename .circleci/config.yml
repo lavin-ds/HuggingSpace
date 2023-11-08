@@ -32,5 +32,5 @@ jobs:
                   git config user.email "lavin.github@outlook.com" 
                   git config user.name "CCI Bot" 
                   git add -A 
-                  git commit -m "Automated deployment job ${CIRCLE_BRANCH} [skip ci]" --allow-empty 
-                  git push https://lavin-ds:${HF_PERSONAL_TOKEN}@huggingface.co/spaces/lavin-ds/HuggingSpace main
+                  git commit -m "Automated push job ${CIRCLE_BRANCH} [skip ci]" --allow-empty 
+                  git push -f https://lavin-ds:${HF_PERSONAL_TOKEN}@huggingface.co/spaces/lavin-ds/HuggingSpace main

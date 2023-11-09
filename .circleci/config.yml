@@ -11,15 +11,10 @@ workflows:
               only:
                 - main
 
-executors:
-  default:
-    docker:
-      - image: &baseimage alpine
-
 jobs:
   sync-to-huggingface:
     docker:
-     - image: *baseimage
+     - image: alpine
     resource_class: small
     steps:
       - run: 

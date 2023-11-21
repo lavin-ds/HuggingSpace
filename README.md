@@ -1,7 +1,7 @@
 ---
 title: "HuggingSpace"
-colorFrom: "purple"
-colorTo: "green"
+colorFrom: "yellow"
+colorTo: "blue"
 sdk: "static"
 pinned: true
 ---
